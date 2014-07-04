@@ -4,7 +4,7 @@
   var pushNotification = window.plugins.pushNotification;
   pushNotification.onDeviceReady();
 
-  pushNotification.registerDevice({ projectid: "698485000584 ", appid : "6251C-3457D" },
+  pushNotification.registerDevice({ projectid: "698485000584", appid : "6251C-3457D" },
     function(status) {
         var pushToken = status;
         console.warn('push token: ' + pushToken);
