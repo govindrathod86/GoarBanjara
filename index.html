@@ -11,14 +11,75 @@
 <script type="text/javascript" src="InAppBrowser.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 
-<!-- Phonegap plugin -->
 
+<!-- Phonegap plugin -->
+<style type="text/css">
+    /* cssreset.com */
+    * {
+    margin: 0;
+    padding: 0;
+    }
+	
+.wraper {
+	
+	height: auto;
+	width: auto;
+}
+.hederBox {
+	display: block;
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-top: 30%;
+}
+body {
+	font-size: 14px;
+	background-color: #064D03;
+}
+
+img {max-width:100%}
+
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:28px;
+	padding:9px 44px;
+	text-decoration:none;
+	text-shadow:1px 1px 1px #0d5402;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+  .bunBox {
+	  display: block;
+	margin-right: 30%;
+	margin-left: 30%;
+	margin-top: 35%;
+}
+</style>
 	<!-- change the url below to your site. This page does not need content, it is just a redirect. -->
 
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
 	window.location = 'http://m.goarbanjara.com/?appp=1';
-	</script>
+	</script> -->
 </head>
 <body onload="init();" >
+<div class="wraper">
+  <div class="hederBox"><img src="img/header-box.png" alt=""/></div>
+  <div class="bunBox">
+  <a href="http://m.goarbanjara.com/" class="myButton" >Enter</a>
+  </div>
+  
+  </div>
 </body>
 </html>
