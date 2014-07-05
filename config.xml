@@ -6,13 +6,13 @@
         id        = "com.goarbanjara"
         version   = "1.0.0">
 
-    <name>Banjara</name>
+    <name>GoarBanjara</name>
 
     <description>
-        Banjara Mobile Apps
+        GoarBanjara Test app
     </description>
 
-    <author href="http://www.goarbanjara.com" email="infobanjara@gmail.com">
+    <author href="http://www.goarbanjara.com" email="support@goarbanjara.com">
         ClassInfo
     </author>
 

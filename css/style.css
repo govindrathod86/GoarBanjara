@@ -1,0 +1,26 @@
+
+
+.content-mrngn {
+	margin: 3px;
+	padding: 2px;
+}
+
+#content-mrngn {
+	margin: 10px;
+	padding: 2px;
+}
+
+.content-mrngn-bx {
+	margin: 4px;
+	padding: 2px;
+}
+
+#bx-mrng {
+	margin: 6px;
+	padding: 3px;
+}
+
+.contentLink {
+	font-weight: bold;
+	color: #F30;
+}
