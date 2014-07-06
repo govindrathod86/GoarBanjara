@@ -1,10 +1,9 @@
-<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>GoarBanjara</title>
-
-<!-- Phonegap plugin -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GoarBanjara</title>
+	<!-- Phonegap plugin -->
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="PushNotification.js"></script>
 <script type="text/javascript" src="vibration.js"></script>
@@ -12,98 +11,83 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/PushwooshAndroid.js"></script>
 <!-- Phonegap plugin -->
-<link href="themes/thime.min.css" rel="stylesheet" type="text/css">
-<link href="themes/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
-<script src="jquery-mobile/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-function showIndicator(){
-$.mobile.loading( 'show', {
-	text: 'Loading...',
-	textVisible: true,
-	theme: 'b',
-	html: ""
-   });
-}
-
-function hideIndicator(){
-$.mobile.loading( 'hide');
-}
-
-</script>
-
+	<link rel="stylesheet" href="css/themes/my_custom_theme.min.css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+	
+	<script>
+		$( document ).on( "click", ".show-page-loading-msg", function() {
+			var $this = $( this ),
+				theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+				msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+				textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+				textonly = !!$this.jqmData( "textonly" );
+				html = $this.jqmData( "html" ) || "";
+			$.mobile.loading( "show", {
+					text: msgText,
+					textVisible: textVisible,
+					theme: theme,
+					textonly: textonly,
+					html: html
+			});
+		})
+		.on( "click", ".hide-page-loading-msg", function() {
+			$.mobile.loading( "hide" );
+		});
+	</script>
 </head>
-
 <body onload="init();" >
-<!-- Start of first page -->
-<div data-role="page" id="foo" data-theme="d" >
-	<div data-role="header" data-theme="c">
-		<h1>XYZ Collage</h1>
-	</div><!-- /header -->
-
-	<div data-role="content" >
-    <div id="content-mrngn">
-<fieldset class="ui-grid-a" >
-  <div class="ui-block-a"><a href="http://classinfo.me/college/category/massageboard/" data-ajax="false" style="text-decoration:none;">
-      <button type="submit" onclick="showIndicator();" data-theme="a"><img src="icon/massage-icon.png" width="80" height="80" alt=""/><br>
-      Massage Board</button>
-    </a></div>
-    <div class="ui-block-b">    
-      <a href="http://classinfo.me/" style="text-decoration:none;" data-ajax="false"><button type="submit" onclick="showIndicator();" data-theme="b"><img src="icon/news-icon.png" width="80" height="80" alt=""/><br>
-      News</button></a>
-      </div>
-</fieldset>
-<fieldset class="ui-grid-a">
-    <div class="ui-block-a">
-      <a href="http://classinfo.me/college/category/class/">
-      <button type="submit" onclick="showIndicator();" data-theme="c"><img src="icon/class-icon.png" width="80" height="80" alt=""/><br>
-      Class</button>
-      </a></div>
-    <div class="ui-block-b">
-      <a href="http://classinfo.me/college/college-events/">
-      <button type="submit" onclick="showIndicator();" data-theme="b"  ><img src="icon/events-icon.png" width="80" height="80" alt=""/><br>
-      Events/Calendar</button>
-      </a></div>
-</fieldset>
-<fieldset class="ui-grid-a">
-    <div class="ui-block-a"><a href="http://classinfo.me/college/category/result/">
-      <button type="submit" onclick="showIndicator();" data-theme="c"><img src="icon/result-icon.png" width="80" height="80" alt=""/><br>Result</button>
-    </a></div>
-    <div class="ui-block-b"><a href="http://classinfo.me/college/category/admission/">
-      <button type="submit" onclick="showIndicator();" data-theme="b"><img src="icon/admission-icon.png" width="80" height="80" alt=""/><br>Admission</button>
-    </a></div>
-</fieldset>
-<fieldset class="ui-grid-a">
-    <div class="ui-block-a"><a href="http://classinfo.me/college/category/knowledge/">
-      <button type="submit" onclick="showIndicator();" data-theme="c"><img src="icon/career-guid-icon.png" width="80" height="80" alt=""/><br>
-    Carrier guidance</button>
-    </a></div>
-    <div class="ui-block-b"><a href="http://classinfo.me/college/category/campus/">
-      <button type="submit" onclick="showIndicator();" data-theme="b"><img src="icon/dpart-icon.png" width="80" height="80" alt=""/><br>
-    Campus</button>
-    </a></div>
-</fieldset>
-<fieldset class="ui-grid-a">
-    <div class="ui-block-a">
-      <a href="http://classinfo.me/college/category/whatsapp/">
-      <button type="submit" onclick="showIndicator();" data-theme="c"><img src="icon/whatsapp-icon.png" width="80" height="80" alt=""/><br>
-    WhatsApp </button>
-      </a></div>
-    <div class="ui-block-b"><a href="http://classinfo.me/college/category/college/">
-      <button type="submit" onclick="showIndicator();" data-theme="b"><img src="icon/feedback-icon.png" width="80" height="80" alt=""/><br>
-    Feedback</button>
-    </a></div>
-</fieldset>
-     </div> <!-- mrgn box/content -->   
-	</div><!-- /content --> 
-
-	<div data-role="footer" data-position="fixed" data-fullscreen="true">
-		<h4>www.GoarBanjara.com</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-
+	<div data-role="page" data-theme="b">
+		<div data-role="header" data-theme="d" data-position="inline">
+			<h1>Banjara News</h1>
+		</div>
+		<div data-role="content" data-theme="b">
+			<div data-role="content" >
+   <!--  <div id="content-mrngn"> mrgn box/content --> 
+<a href="http://m.goarbanjara.com/" data-role="button" data-icon="arrow-r" data-iconpos="right">National News Headlines</a>
+<a href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Banjara Community</a>
+<a href="#" data-role="button" data-icon="arrow-d">online Banjara e-News & Magazine</a>
+<ul data-role="listview" data-inset="true">
+    <li><a href="#">
+        <img src="icon/goarbanjara.png">
+        <h2>GoarBanjara</h2>
+        <p>Online news portal: Editor : Govind Ratod</p></a>
+    </li>
+    <li><a href="#">
+        <img src="icon/banjara-darpan.png">
+        <h2>Banjara Darpan</h2>
+        <p>Monthly news magzine from Madhya Pradesh, Editor: Banwarilal Gouwariya</p></a>
+    </li>
+    <li><a href="#">
+        <img src="icon/banjara-chetna.png">
+        <h2>Banjara Chetna</h2>
+        <p>Magazine from Rajasthan, Editor : Urjaram Banjara</p></a>
+    </li>
+	<li><a href="#">
+        <img src="icon/banjara-pukar.png">
+        <h2>Banjara Pukar</h2>
+        <p>Banjara Marathi news paper, Editor : XYZ Banjara</p></a>
+    </li>
+	<li><a href="#">
+        <img src="icon/banjara-bandhu.png">
+        <h2>Banjara Bandhu</h2>
+        <p>Banjara Kannada weekly news paper, Editor : Ramesh Chavan</p></a>
+    </li>
+	<li><a href="#">
+        <img src="icon/rajbanjara.png">
+        <h2>RajBanjara</h2>
+        <p>Hindi News paper & Magazine, Editor : Ravi RAj RAthod</p></a>
+    </li>
+	<li><a href="#">
+        <img src="icon/banjara-tengana.png">
+        <h2>Banjara Telagu</h2>
+        <p>Banjara Telgu news paper, Editor : XYZ Banjara</p></a>
+    </li>
+</ul>
+<!-- </div> mrgn box/content --> 
+		</div>
+	</div>
 </body>
 </html>
